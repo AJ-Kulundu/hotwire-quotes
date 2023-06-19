@@ -1,0 +1,11 @@
+<%= form_with model: quote do |f| %>
+   <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <% quote.errrs.full_messages_for(:name) do |message|%>
+      <%= message %>
+    <%end%>
+   </div>
+    <%= f.submit %>
+
+<%end%>
