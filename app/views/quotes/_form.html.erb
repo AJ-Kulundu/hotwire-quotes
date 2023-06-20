@@ -22,7 +22,8 @@
       <%= quote.errors.full_messages.to_sentence.capitalize %>
     </div>
   <% end %>
-
-  <%= f.input :name, input_html: { autofocus: true },class: "flex flex-col w-3/12 pb-6 space-y-4" %>
-  <%= f.submit class: "border px-4 py-2 rounded-lg bg-green-300 w-1/12" %>
+  <div class="flex justify-between items-end">
+  <%= f.input :name, input_html: { autofocus: true },class: "flex flex-col pb-6 space-y-4" %>
+  <%= f.submit class: "border px-4 py-2 rounded-lg bg-green-300" %>
+  </div>
 <% end %>
