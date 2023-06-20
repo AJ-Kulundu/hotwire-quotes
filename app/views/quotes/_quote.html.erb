@@ -1,8 +1,9 @@
+<%= turbo_frame_tag quote do %>
 <div class="flex py-4 justify-between items-center w-full">
-  <%= link_to quote.name, quote_path(quote),class: "text-lg font-semibold"%>
-   
-  <div>
+  <%= link_to quote.name, quote_path(quote),data: {turbo_frame:"_top"},class: "text-lg font-semibold"%>
+  <div class="flex space-x-4 justify-between items center">
     <%= link_to "Edit", edit_quote_path(quote), class: "border px-4 py-2 rounded-lg bg-amber-300" %>
-    <%= link_to "Delete", quote_path(quote), method: :delete, class: "border px-4 py-2 rounded-lg bg-red-300" %>
+    <%= button_to "Delete", quote_path(quote), method: :delete, class: "border px-4 py-2 rounded-lg bg-red-300" %>
   </div>
 </div>
+<% end %>
