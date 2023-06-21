@@ -1,21 +1,3 @@
-
-<%
-=begin%>
- <%= form_with model: quote do |f| %>
-   <div class="flex flex-col w-3/12 pb-6 space-y-4">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-    <% quote.errors.full_messages_for(:name) do |message|%>
-      <%= message %>
-    <%end%>
-   </div>
-   <div class="border px-4 py-2 rounded-lg bg-green-300 w-1/12" >
-    <%= f.submit %>
-    </div>
-<%end%> 
-<%
-=end%>
-
 <%= simple_form_for quote, html: { class: "quote form" } do |f| %>
   <% if quote.errors.any? %>
     <div class="error-message">
@@ -23,7 +5,10 @@
     </div>
   <% end %>
   <div class="flex justify-between items-end">
-  <%= f.input :name, input_html: { autofocus: true },class: "flex flex-col pb-6 space-y-4" %>
-  <%= f.submit class: "border px-4 py-2 rounded-lg bg-green-300" %>
+    <%= f.input :name, input_html: { autofocus: true },class: "flex flex-col pb-6 space-y-4" %>
+    <div class="flex justify-between space-x-4">
+      <%= link_to "Cancel", quotes_path, class: "border px-4 py-2 rounded-lg bg-red-300"%>
+      <%= f.submit class: "border px-4 py-2 rounded-lg bg-green-300" %>
+    </div>
   </div>
 <% end %>
