@@ -1,0 +1,10 @@
+<div class="flex flex-col w-full h-full justify-center items-center space-y-6">
+
+<p class="text-xl font-semibold">Quote Editor</p>
+<p class="text-lg font-bold">A blazing fast quote editor built with Hotwire</p>
+<%if user_signed_in?%>
+    <%= link_to "View Quotes", quotes_path, class: "border px-4 py-2 rounded-lg" %>
+<%else%>
+    <%= link_to "Sign In", new_user_session_path, class: "border px-4 py-2 rounded-lg" %>
+<%end%>
+</div>

@@ -1,0 +1,19 @@
+<header class="flex justify-between items-center w-full py-4 px-8 top-0 border">
+    <p class="text-xl font-bold">Quotes Editor</p>
+  <% if user_signed_in? %>
+    <div class="navbar__brand">
+      Company name
+    </div>
+    <div class="navbar__name">
+      Current user name
+    </div>
+    <%= button_to "Sign out",
+                  destroy_user_session_path,
+                  method: :delete,
+                  class: "border px-4 py-2 rounded-lg"%>
+  <% else %>
+    <%= link_to "Sign in",
+                new_user_session_path,
+                class: "border px-4 py-2 rounded-lg" %>
+  <% end %>
+</header>

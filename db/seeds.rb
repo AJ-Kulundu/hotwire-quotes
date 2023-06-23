@@ -6,8 +6,17 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-20.times do
+Company.create(name: "KPMG")
+Company.create(name: "PWC")
+
+30.times do
     Quote.create(
+        company:[Company.first, Company.second].sample,
         name: Faker::Lorem.sentence(word_count: 3)
     )
 end
+
+
+User.create(email: "accountant@kpmg.co.ke", password: "password", company: Company.first)
+User.create(email: "manager@kpmg.co.ke", password: "password", company: Company.first)
+User.create(email: "eavesdropper@pwc.com", password: "password", company: Company.second)
