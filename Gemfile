@@ -75,3 +75,4 @@ gem "tailwindcss-rails", "~> 2.0"
 gem 'simple_form'
 gem 'simple_form-tailwind'
 gem 'faker'
+gem "devise", "~> 4.9"
