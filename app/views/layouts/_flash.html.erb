@@ -1,0 +1,10 @@
+<% flash.each do |flash_type, message| %>
+   <div 
+   class="animate-[fadeInOut_4s_ease-in-out] border py-3 px-6 text-left rounded-lg"
+   data-controller="removals"
+   data-action="animationend->removals#remove"
+   >
+        <%= message %>
+   </div>
+
+<%end%>
