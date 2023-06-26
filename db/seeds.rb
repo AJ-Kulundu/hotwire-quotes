@@ -16,6 +16,13 @@ Company.create(name: "PWC")
     )
 end
 
+90.times do
+    LineItemDate.create(
+        quote: Quote.all.sample,
+        date: Faker::Date.between(from: 1.month.ago, to: Date.today),
+    )
+end
+
 
 User.create(email: "accountant@kpmg.co.ke", password: "password", company: Company.first)
 User.create(email: "manager@kpmg.co.ke", password: "password", company: Company.first)

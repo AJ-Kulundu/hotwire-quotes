@@ -1,0 +1,9 @@
+<div class="flex py-4 justify-between items-center w-full">
+  <h2 class = "text-lg font-semibold">
+    <%= l(line_item_date.date, format: :long) %>
+  </h2>
+  <div class="flex space-x-4 justify-between items center">
+    <%= link_to "Edit", [:edit,quote,line_item_date], class: "border px-4 py-2 rounded-lg bg-amber-300" %>
+    <%= button_to "Delete", [quote,line_item_date], method: :delete, class: "border px-4 py-2 rounded-lg bg-red-300" %>
+  </div>
+</div>

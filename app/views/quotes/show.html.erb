@@ -1,4 +1,11 @@
 <div class="container flex flex-col space-y-8">
-   <%= link_to sanitize("&larr; Back to Quotes"), quotes_path %>
-    <h1 class="text-3xl font-bold pl-6"><%= @quote.name %></h1>
+    <%= link_to sanitize("&larr; Back to Quotes"), quotes_path %>
+    <div class= "flex flex-row items-center justify-between">
+        <h1 class="text-3xl font-bold"><%= @quote.name %></h1>
+        <%= link_to "New Date", new_quote_line_item_date_path(@quote), class: "border px-4 py-2 rounded-lg bg-green-300"%>
+    </div>
+
+    <hr class="border-2 border-black/60"/>
+
+    <%= render @line_item_dates, quote: @quote %>
 </div>
