@@ -1,9 +1,5 @@
 <%= simple_form_for quote, html: { class: "quote form" } do |f| %>
-  <% if quote.errors.any? %>
-    <div class="error-message">
-      <%= quote.errors.full_messages.to_sentence.capitalize %>
-    </div>
-  <% end %>
+  <%= form_error_notification(line_item_date)%>
   <div class="flex justify-between items-end">
     <%= f.input :name, input_html: { autofocus: true },class: "flex flex-col pb-6 space-y-4" %>
     <div class="flex justify-between space-x-4">

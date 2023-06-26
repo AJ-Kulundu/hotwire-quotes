@@ -1,0 +1,10 @@
+<%= simple_form_for [quote,line_item_date], html: { class: "quote form" } do |f| %>
+  <%= form_error_notification(line_item_date)%>
+  <div class="flex justify-between items-end">
+    <%= f.input :date, html5: true, input_html: { autofocus: true },class: "flex flex-row pb-6 space-y-4" %>
+    <div class="flex justify-between space-x-4">
+      <%= link_to "Cancel", quote, class: "border px-4 py-2 rounded-lg bg-red-300"%>
+      <%= f.submit class: "border px-4 py-2 rounded-lg bg-green-300" %>
+    </div>
+  </div>
+<% end %>
