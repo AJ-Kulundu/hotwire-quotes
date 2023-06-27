@@ -3,7 +3,7 @@
   <div class="flex justify-between items-end">
     <%= f.input :date, html5: true, input_html: { autofocus: true },class: "flex flex-row pb-6 space-y-4" %>
     <div class="flex justify-between space-x-4">
-      <%= link_to "Cancel", quote, class: "border px-4 py-2 rounded-lg bg-red-300"%>
+      <%= link_to "Cancel",[quote,line_item_date], class: "border px-4 py-2 rounded-lg bg-red-300"%>
       <%= f.submit class: "border px-4 py-2 rounded-lg bg-green-300" %>
     </div>
   </div>

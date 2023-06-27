@@ -3,6 +3,8 @@
     <h1 class="text-3xl font-bold">
         Edit Date
     </h1>
-    <%= render "form", quote: @quote,line_item_date: @line_item_date %>
+    <%= turbo_frame_tag @line_item_date do%>
+        <%= render "form", quote: @quote,line_item_date: @line_item_date %>
+    <% end %>
     
 </div>
