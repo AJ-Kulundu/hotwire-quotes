@@ -25,6 +25,11 @@ class LineItemDatesController < ApplicationController
       render :edit, status: :unprocessable_entity
     end
   end
+
+  def destroy
+    @line_item_date.destroy
+    redirect_to @quote, notice: "Date was successfully deleted."
+  end
     
   private
   
