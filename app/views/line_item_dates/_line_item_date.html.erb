@@ -1,11 +1,21 @@
 <%= turbo_frame_tag line_item_date do %>
-  <div class="flex py-4 justify-between items-center w-full">
-    <h2 class = "text-lg font-semibold">
-      <%= l(line_item_date.date, format: :long) %>
-    </h2>
-    <div class="flex space-x-4 justify-between items center">
-      <%= link_to "Edit", [:edit,quote,line_item_date], class: "border px-4 py-2 rounded-lg bg-amber-300" %>
-      <%= button_to "Delete", quote_line_item_date_path(quote, line_item_date),method: :delete ,data: {turbo_confirm: "Are you sure?"} ,class: "border px-4 py-2 rounded-lg bg-red-300" %>
+    <div class="flex py-4 justify-between items-center w-full">
+      <h2 class = "text-lg font-bold">
+        <%= l(line_item_date.date, format: :long) %>
+      </h2>
+      <div class="flex space-x-4 justify-between items center">
+        <%= link_to "Edit", [:edit,quote,line_item_date], class: "border px-4 py-2 rounded-lg bg-amber-300" %>
+        <%= button_to "Delete", quote_line_item_date_path(quote, line_item_date),method: :delete ,data: {turbo_confirm: "Are you sure?"} ,class: "border px-4 py-2 rounded-lg bg-red-300" %>
+      </div>
     </div>
-  </div>
+    <div class="flex flex-row justify-between w-full py-4 ">
+      <div class = "text-lg font-semibold basis-1/4">Name</div>
+      <div class = "text-lg font-semibold basis-1/4">Quantity</div>
+      <div class = "text-lg font-semibold basis-1/4">Price</div>
+      <div class = "text-lg font-semibold basis-1/4"></div>
+    </div>
+    <%= render  line_item_date.line_items, quote: quote, line_item_date: line_item_date %>
+    <div class="flex w-full justify-center">
+      <%= link_to "Add item",[:new, quote, line_item_date, :line_item],class: "border px-4 py-2 rounded-lg bg-green-300"%>
+    </div>
 <% end %>

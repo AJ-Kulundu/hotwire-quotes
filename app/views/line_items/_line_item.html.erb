@@ -1,0 +1,20 @@
+<div class="flex w-full justify-between py-3">
+    <div class="basis-1/4">
+       <%= line_item.name%>
+    </div>
+    <div class="basis-1/4">
+       <%= line_item.quantity%>
+    </div>
+    <div class="basis-1/4">
+       <%= number_to_currency line_item.unit_price%>
+    </div>
+    <div class="flex space-x-4 basis-1/4 justify-end">
+        <%= link_to "Edit",
+                [:edit, quote, line_item_date, line_item],
+                class: "border px-4 py-2 rounded-lg bg-amber-300" %>
+        <%= button_to "Delete",
+                  [quote, line_item_date, line_item],
+                  method: :delete,
+                  class: "border px-4 py-2 rounded-lg bg-red-300" %>
+    </div>
+</div>

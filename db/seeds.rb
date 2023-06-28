@@ -27,3 +27,13 @@ end
 User.create(email: "accountant@kpmg.co.ke", password: "password", company: Company.first)
 User.create(email: "manager@kpmg.co.ke", password: "password", company: Company.first)
 User.create(email: "eavesdropper@pwc.com", password: "password", company: Company.second)
+
+270.times do
+    LineItem.create(
+        line_item_date: LineItemDate.all.sample,
+        name: Faker::Lorem.sentence(word_count: 2),
+        description: Faker::Lorem.sentence(word_count: 10),
+        quantity: Faker::Number.between(from: 1, to: 100),
+        unit_price: Faker::Number.decimal(l_digits: 2, r_digits: 2)
+    )
+end
