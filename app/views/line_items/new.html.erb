@@ -1,0 +1,7 @@
+<div class="flex flex-col w-full justify-center space-y-6">
+    <%= link_to sanitize("&larr; Back"), @line_item_date %>
+    <h1 class="text-3xl font-bold">
+        New Date <%= l(@line_item_date.date, format: :long)%>
+    </h1>
+        <%= render "form", quote: @quote,line_item_date: @line_item_date, line_item: @line_item %>
+</div>
