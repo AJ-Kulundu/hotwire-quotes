@@ -16,6 +16,7 @@
         <%= button_to "Delete",
                   [quote, line_item_date, line_item],
                   method: :delete,
+                  form: {data: {turbo_frame: "_top"}},
                   class: "border px-4 py-2 rounded-lg bg-red-300" %>
     </div>
 </div>
