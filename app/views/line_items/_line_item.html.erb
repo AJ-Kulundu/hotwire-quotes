@@ -11,6 +11,7 @@
     <div class="flex space-x-4 basis-1/4 justify-end">
         <%= link_to "Edit",
                 [:edit, quote, line_item_date, line_item],
+                data:{turbo_frame: "_top"},
                 class: "border px-4 py-2 rounded-lg bg-amber-300" %>
         <%= button_to "Delete",
                   [quote, line_item_date, line_item],

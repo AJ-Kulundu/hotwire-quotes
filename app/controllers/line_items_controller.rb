@@ -1,6 +1,7 @@
 class LineItemsController < ApplicationController
   before_action :set_quote
   before_action :set_line_item_date
+  before_action :set_line_item, only: [:edit, :update, :destroy]
 
   def new
     @line_item = @line_item_date.line_items.build
@@ -17,7 +18,13 @@ class LineItemsController < ApplicationController
 
   def edit; end
 
-  def update; end
+  def update
+    if @line_item.update(line_item_params)
+      redirect_to @quote, notice: "Item was successfully updated."
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
 
   private
 
@@ -31,5 +38,9 @@ class LineItemsController < ApplicationController
 
   def set_line_item_date
     @line_item_date = @quote.line_item_dates.find(params[:line_item_date_id])
+  end
+
+  def set_line_item
+    @line_item = @line_item_date.line_items.find(params[:id])
   end
 end
