@@ -3,16 +3,23 @@ en:
     placeholders:
       quote:
         name: Name of your quote
+      line_item:
+        name: Name of your Item
+        description: Description(Optional)
+        quantity: 1
+        unit_price: $100,00
     labels: 
       quote:
         name: Name
       line_item_date:
         date: Date
-    "yes": 'Yes'
-    "no": 'No'
-    required:
-      text: 'required'
-      mark: '*'
+      line_item:
+        name: Name
+        description: Description
+        quantity: Quantity
+        unit_price: Unit Price
+
+      
       # You can uncomment the line below if you need to overwrite the whole required html.
       # When using html, text and mark won't be used.
       # html: '<abbr title="required">*</abbr>'
@@ -45,3 +52,6 @@ en:
       line_item_date:
         create: Create date
         update: Update date
+      line_item:
+        create: Create item
+        update: Update item

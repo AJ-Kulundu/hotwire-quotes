@@ -4,7 +4,7 @@
     <div class="flex flex-col space-y-4 w-full">
         <div class="flex flex-row space-x-4 items-end w-full">
             <%= f.input :name %>
-            <%= f.input :quantity%>
+            <%= f.input :quantity %>
             <%= f.input :unit_price%>
             <div class="flex flex-row space-x-4">
                 <%= link_to "Cancel", quote_path(quote),class: "border px-4 py-2 rounded-lg bg-red-300"%>
@@ -12,6 +12,5 @@
             </div>
         </div>
         <%= f.input :description%>
-    
-    
+    </div>  
 <%end%>
