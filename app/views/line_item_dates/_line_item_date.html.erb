@@ -14,9 +14,11 @@
       <div class = "text-lg font-semibold basis-1/4">Price</div>
       <div class = "text-lg font-semibold basis-1/4"></div>
     </div>
-    <%= render  line_item_date.line_items, quote: quote, line_item_date: line_item_date %>
-    <%= turbo_frame_tag dom_id(LineItem.new, dom_id(line_item_date))%>
+    <%= turbo_frame_tag nested_dom_id(line_item_date,"line_items") do%>
+      <%= render  line_item_date.line_items, quote: quote, line_item_date: line_item_date %>
+    <% end %>
+    <%= turbo_frame_tag nested_dom_id(line_item_date,LineItem.new)%>
     <div class="flex w-full justify-center border-t-2 border-black border-dashed py-4">
-      <%= link_to "Add item",[:new, quote, line_item_date, :line_item], data:{turbo_frame: dom_id(LineItem.new, dom_id(line_item_date))},class: "border px-4 py-2 rounded-lg bg-green-300"%>
+      <%= link_to "Add item",[:new, quote, line_item_date, :line_item], data:{turbo_frame: nested_dom_id(line_item_date,LineItem.new)},class: "border px-4 py-2 rounded-lg bg-green-300"%>
     </div>
 <% end %>
