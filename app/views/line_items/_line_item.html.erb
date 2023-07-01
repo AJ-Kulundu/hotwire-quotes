@@ -1,3 +1,4 @@
+<%= turbo_frame_tag line_item do%>
 <div class="flex w-full justify-between py-3">
     <div class="basis-1/4">
        <%= line_item.name%>
@@ -11,7 +12,7 @@
     <div class="flex space-x-4 basis-1/4 justify-end">
         <%= link_to "Edit",
                 [:edit, quote, line_item_date, line_item],
-                data:{turbo_frame: "_top"},
+                data:{turbo_frame: dom_id(line_item)},
                 class: "border px-4 py-2 rounded-lg bg-amber-300" %>
         <%= button_to "Delete",
                   [quote, line_item_date, line_item],
@@ -20,3 +21,4 @@
                   class: "border px-4 py-2 rounded-lg bg-red-300" %>
     </div>
 </div>
+<% end %>
