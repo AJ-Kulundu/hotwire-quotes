@@ -1,0 +1,5 @@
+<%= turbo_stream.append "quotes", partial: @quotes, locals: { quote:@quotes}%>
+
+<%if @pagy.next.present? %>
+    <%= turbo_stream.replace "infinite_scroll", partial: "quotes/scroll_frame", locals: {page: @pagy.next} %>
+<%end%>

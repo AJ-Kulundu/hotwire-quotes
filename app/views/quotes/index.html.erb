@@ -21,6 +21,8 @@
 
     <%= turbo_frame_tag "quotes" do%>
         <%= render @quotes %>
+        <%= render 'quotes/scroll_frame', page: 1 %>
     <%end%>
+
     
 <div>

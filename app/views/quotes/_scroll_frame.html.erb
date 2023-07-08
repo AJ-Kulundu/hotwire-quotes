@@ -1,0 +1,3 @@
+<%= turbo_frame_tag "infinite_scroll", src: quotes_path(page: page, format: :turbo_stream), loading: :lazy do%>
+    <%= render partial:"quotes/loading" %>
+<%end%>
