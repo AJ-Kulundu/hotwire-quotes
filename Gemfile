@@ -76,3 +76,4 @@ gem 'simple_form'
 gem 'simple_form-tailwind'
 gem 'faker'
 gem "devise", "~> 4.9"
+gem "pagy"
