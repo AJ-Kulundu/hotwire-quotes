@@ -2,7 +2,7 @@ class QuotesController < ApplicationController
     before_action :set_quote, only: %i[show edit update destroy]
 
     def index
-        @pagy,@quotes = pagy_countless(current_company.quotes.ordered, items: 10)
+        @pagy,@quotes = pagy_countless(current_company.quotes.ordered, items: 50)
 
         respond_to do |format|
             format.html
