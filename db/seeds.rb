@@ -9,14 +9,14 @@
 Company.create(name: "KPMG")
 Company.create(name: "PWC")
 
-100.times do
+1000.times do
     Quote.create(
         company:[Company.first, Company.second].sample,
         name: Faker::Lorem.sentence(word_count: 3)
     )
 end
 
-300.times do
+3000.times do
     LineItemDate.create(
         quote: Quote.all.sample,
         date: Faker::Date.between(from: 1.month.ago, to: Date.today),
@@ -28,7 +28,7 @@ User.create(email: "accountant@kpmg.co.ke", password: "password", company: Compa
 User.create(email: "manager@kpmg.co.ke", password: "password", company: Company.first)
 User.create(email: "eavesdropper@pwc.com", password: "password", company: Company.second)
 
-900.times do
+9000.times do
     LineItem.create(
         line_item_date: LineItemDate.all.sample,
         name: Faker::Lorem.sentence(word_count: 2),
