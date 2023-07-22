@@ -14,12 +14,17 @@ module.exports = {
       },
       keyframes: {
         fadeInOut: {
-          "0%, 100%": {
+          "0%": {
+            opacity:0,
+            transform: "translateX(1.5rem)"
+          },
+          "50%, 60%": {
+            opacity:1,
+            transform: "translateX(0px)"
+          },
+          "100%":{
             opacity:0
           },
-          "5%, 60%": {
-            opacity:1
-          }
         }
       },
     },
